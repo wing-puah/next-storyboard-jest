@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Button Basic button 1`] = `
+Array [
+  <button
+    aria-label={null}
+    className="button__ButtonBasic-sc-12uovs1-0 iBimkZ btn btn-secondary"
+    onClick={[Function]}
+  >
+    Test 1
+  </button>,
+  <button
+    aria-label={null}
+    background="#B7D1DA"
+    className="button__ButtonBasic-sc-12uovs1-0 jdrDdE btn btn-secondary"
+    onClick={[Function]}
+  >
+    Test 2
+  </button>,
+]
+`;
