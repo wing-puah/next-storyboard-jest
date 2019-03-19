@@ -13,4 +13,4 @@ storiesOf('Button', module)
       <ButtonBasic>Test 1</ButtonBasic>
       <ButtonBasic background='#B7D1DA'>Test 2</ButtonBasic>
     </Fragment>
-  ));
+));
