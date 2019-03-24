@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import App, { Container } from 'next/app';
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import JssProvider from 'react-jss/lib/JssProvider'; // eslint-disable-line
+import getPageContext from '../src/getPageContext';
 import theme from '../components/styles/theme';
 import Layout from '../components/Layout';
 
 class MyApp extends App {
+  constructor() {
+    super();
+    this.pageContext = getPageContext();
+  }
+
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
 
@@ -15,6 +23,14 @@ class MyApp extends App {
 
     return { pageProps };
   }
+
+  // componentDidMount() {
+  //   // Remove the server-side injected CSS.
+  //   const jssStyles = document.querySelector('#jss-server-side');
+  //   if (jssStyles && jssStyles.parentNode) {
+  //     jssStyles.parentNode.removeChild(jssStyles);
+  //   }
+  // }
 
   componentDidCatch(error, errorInfo) {
     console.log('CUSTOM ERROR HANDLING', error); // eslint-disable-line no-console
@@ -29,13 +45,20 @@ class MyApp extends App {
       <Container>
         <Head>
           <title>Next storybook</title>
-          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossOrigin="anonymous" />
         </Head>
-        <ThemeProvider theme={theme}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </ThemeProvider>
+        <JssProvider
+          registry={this.pageContext.sheetsRegistry}
+          generateClassName={this.pageContext.generateClassName}
+        >
+          <Fragment>
+            <CssBaseline />
+            <ThemeProvider theme={theme}>
+              <Layout>
+                <Component pageContext={this.pageContext} {...pageProps} />
+              </Layout>
+            </ThemeProvider>
+          </Fragment>
+        </JssProvider>
       </Container>
     );
   }

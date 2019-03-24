@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Box Basic box 1`] = `
+<div
+  className="box__Box-sc-1ecsml6-0 iRmYNN"
+/>
+`;
+
 exports[`Storyshots Button Basic button 1`] = `
 Array [
   <button
