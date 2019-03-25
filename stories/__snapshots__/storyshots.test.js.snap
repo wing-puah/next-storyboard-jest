@@ -25,3 +25,54 @@ Array [
   </button>,
 ]
 `;
+
+exports[`Storyshots Navigation Basic navigation 1`] = `
+<nav
+  className="navbar navbar-expand-lg navbar-light bg-light"
+>
+  <ul
+    className="navbar-nav"
+  >
+    <li
+      className="nav-item px-3"
+    >
+      <a
+        className="active navigation__NavLink-iqabyh-0 fvqVbk"
+        onClick={[Function]}
+      >
+        Home
+      </a>
+    </li>
+    <li
+      className="nav-item px-3"
+    >
+      <a
+        className="navigation__NavLink-iqabyh-0 fvqVbk"
+        onClick={[Function]}
+      >
+        Path 1
+      </a>
+    </li>
+    <li
+      className="nav-item px-3"
+    >
+      <a
+        className="navigation__NavLink-iqabyh-0 fvqVbk"
+        onClick={[Function]}
+      >
+        Path 2
+      </a>
+    </li>
+    <li
+      className="nav-item px-3"
+    >
+      <a
+        className="navigation__NavLink-iqabyh-0 fvqVbk"
+        onClick={[Function]}
+      >
+        Path 3
+      </a>
+    </li>
+  </ul>
+</nav>
+`;

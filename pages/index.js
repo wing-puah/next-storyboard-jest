@@ -1,6 +1,7 @@
-import Chip from "@material-ui/core/Chip";
-import styled from "styled-components";
-import { ButtonBasic } from "../components/styles/button";
+import Chip from '@material-ui/core/Chip';
+import styled from 'styled-components';
+import { ButtonBasic } from '../components/styles/button';
+import Navigation from '../components/navigation';
 
 const MyChip = styled(Chip)`
   && {
@@ -11,6 +12,7 @@ const MyChip = styled(Chip)`
 const Home = () => {
   return (
     <div>
+      <Navigation />
       <h2>Welcome to next.js!</h2>
       <ButtonBasic>Btn 1</ButtonBasic>
       <ButtonBasic background="#52AA5E">Btn 2</ButtonBasic>
